@@ -28,6 +28,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        
     }
     return self;
 }
@@ -35,12 +36,15 @@
 -(void)createHeaderView{
     
     UIView *bgView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, BGVIEW_WIDTH, BGVIEW_HEIGHT)];
-    bgView.backgroundColor = [UIColor blackColor];
+    bgView.backgroundColor = [UIColor darkGrayColor];
     
     _headIcon = [[UIImageView alloc]initWithFrame:CGRectMake(LEFT_GAP, TOP_GAP, 40, 40)];
+    _headIcon.backgroundColor = [UIColor redColor];
     [bgView addSubview:_headIcon];
     
-    _labelName = [factory createLabelFrame:CGRectMake(_headIcon.frame.origin.x+_headIcon.frame.size.width+8, BGVIEW_HEIGHT/2-15, 100, 15) Text:@"二哥"];
+    _labelName = [factory createLabelFrame:CGRectMake(_headIcon.frame.origin.x+_headIcon.frame.size.width+15, BGVIEW_HEIGHT/2-10, 100, 15) Text:@"二哥"];
+    _labelName.font = BoldFont(14);
+    _labelName.textColor = [UIColor redColor];
     [bgView addSubview:_labelName];
     _tableView.tableHeaderView = bgView;
 }
@@ -57,7 +61,10 @@
     _tableView.dataSource = self;
     _tableView.delegate = self;
     _tableView.autoresizesSubviews = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.view addSubview:_tableView];
+    
+    [self createHeaderView];
 	// Do any additional setup after loading the view.
 }
 

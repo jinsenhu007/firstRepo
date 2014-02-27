@@ -11,15 +11,13 @@
 #import "AllCell.h"
 #import "SVPullToRefresh.h"
 #import "AppDelegate.h"
+#import "factory.h"
+#import "BlockUI.h"
 
 #import "DDMenuController.h"
 
 #define CELL_HEIGHT 200
 
-#define IOS7 if([[[[UIDevice currentDevice] systemVersion] substringToIndex:1] intValue]>=7)\
-{self.extendedLayoutIncludesOpaqueBars = NO;\
-self.modalPresentationCapturesStatusBarAppearance =NO;\
-self.edgesForExtendedLayout = UIRectEdgeNone;}
 
 
 @interface AllViewController ()
@@ -37,6 +35,13 @@ self.edgesForExtendedLayout = UIRectEdgeNone;}
         
     }
     return self;
+}
+
+-(void)createDropDwonMenu{
+    btn = [factory createButtonFrame:CGRectMake(0, 0, 100, 44) Title:@"全部消息" Target:self Action:@selector(btnClicked) Tag:1];
+    btn.backgroundColor = [UIColor clearColor];
+    self.navigationItem.titleView = btn;
+    
 }
 
 - (void)viewDidLoad
@@ -58,6 +63,7 @@ self.edgesForExtendedLayout = UIRectEdgeNone;}
     _tableView.delegate = self;
     _tableView.autoresizesSubviews = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [self.view addSubview:_tableView];
+    [self createDropDwonMenu];
     
     
     __weak AllViewController *weakSelf = self;
@@ -106,6 +112,7 @@ self.edgesForExtendedLayout = UIRectEdgeNone;}
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    
     if (_arrData.count == 0) {
         return 10;
     }
@@ -114,6 +121,9 @@ self.edgesForExtendedLayout = UIRectEdgeNone;}
 
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     NSString *cellId = @"cellId";
+    if (tableView != _tableView) {
+        return nil;
+    }
     AllCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
     if (!cell) {
         cell = [[AllCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
@@ -133,10 +143,16 @@ self.edgesForExtendedLayout = UIRectEdgeNone;}
     
 }
 
+-(void)btnClicked{
+
+}
+
 #pragma mark - UITableViewDelegate method
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return CELL_HEIGHT;
 }
+
+
 
 - (void)didReceiveMemoryWarning
 {

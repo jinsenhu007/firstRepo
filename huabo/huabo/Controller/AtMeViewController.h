@@ -8,6 +8,9 @@
 
 #import "BaseViewController.h"
 
-@interface AtMeViewController : BaseViewController
+@interface AtMeViewController : BaseViewController<UITableViewDataSource,UITableViewDelegate>
 
+
+@property (retain,nonatomic) UITableView *tableView;
+@property (retain,nonatomic) NSMutableArray *arrData;
 @end

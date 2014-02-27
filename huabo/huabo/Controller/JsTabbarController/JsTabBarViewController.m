@@ -49,11 +49,12 @@
             img = [UIImage imageNamed:imageName];
         }
        // UIImage *imag = [UIImage imageNamed:imageName];
-        UIColor *color = [[UIColor alloc]initWithRed:0.54 green:0.048 blue:0.3 alpha:1];
+        UIColor *color = [UIColor blackColor];
         UIColor *colorSelect = [UIColor whiteColor];
         UITabBarItem *item = [[UITabBarItem alloc]initWithTitle:title image:img tag:tag++];
+        
         [item setTitlePositionAdjustment:UIOffsetMake(0, -15)];
-        [item setTitleTextAttributes:@{UITextAttributeTextColor: color} forState:UIControlStateNormal];
+        [item setTitleTextAttributes:@{NSForegroundColorAttributeName: color} forState:UIControlStateNormal];
         [item setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:colorSelect,UITextAttributeTextColor, nil] forState:UIControlStateSelected];
         [item setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:SysFont(13),UITextAttributeFont, nil] forState:UIControlStateNormal];
         c.tabBarItem = item;

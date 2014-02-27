@@ -62,6 +62,9 @@
 		84216D7518BDD76100007DC0 /* DDMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84216D7418BDD76100007DC0 /* DDMenuController.m */; };
 		84216D7818BDD8A900007DC0 /* SideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84216D7718BDD8A900007DC0 /* SideMenuViewController.m */; };
 		84216D7B18BDEBA300007DC0 /* SideMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84216D7A18BDEBA300007DC0 /* SideMenuCell.m */; };
+		84F4137B18BF28CB00F8F414 /* BUIControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F4137618BF28CB00F8F414 /* BUIControl.m */; };
+		84F4137C18BF28CB00F8F414 /* BUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F4137818BF28CB00F8F414 /* BUIView.m */; };
+		84F4137D18BF28CB00F8F414 /* ZXObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F4137A18BF28CB00F8F414 /* ZXObject.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -158,6 +161,13 @@
 		84216D7718BDD8A900007DC0 /* SideMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SideMenuViewController.m; path = Controller/common/SideMenuViewController.m; sourceTree = "<group>"; };
 		84216D7918BDEBA300007DC0 /* SideMenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SideMenuCell.h; path = model/SideMenuCell.h; sourceTree = "<group>"; };
 		84216D7A18BDEBA300007DC0 /* SideMenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SideMenuCell.m; path = model/SideMenuCell.m; sourceTree = "<group>"; };
+		84F4137418BF28CB00F8F414 /* BlockUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlockUI.h; sourceTree = "<group>"; };
+		84F4137518BF28CB00F8F414 /* BUIControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BUIControl.h; sourceTree = "<group>"; };
+		84F4137618BF28CB00F8F414 /* BUIControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BUIControl.m; sourceTree = "<group>"; };
+		84F4137718BF28CB00F8F414 /* BUIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BUIView.h; sourceTree = "<group>"; };
+		84F4137818BF28CB00F8F414 /* BUIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BUIView.m; sourceTree = "<group>"; };
+		84F4137918BF28CB00F8F414 /* ZXObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXObject.h; sourceTree = "<group>"; };
+		84F4137A18BF28CB00F8F414 /* ZXObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXObject.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -368,6 +378,7 @@
 		84216D3A18BD8F4400007DC0 /* OpenSource */ = {
 			isa = PBXGroup;
 			children = (
+				84F4137318BF28CB00F8F414 /* BlockUI */,
 				84216D7318BDD76100007DC0 /* DDMenuController.h */,
 				84216D7418BDD76100007DC0 /* DDMenuController.m */,
 				84216D5318BDAD2E00007DC0 /* BlockUI */,
@@ -402,6 +413,20 @@
 			);
 			name = SVPullToRefresh;
 			path = OpenSource/SVPullToRefresh;
+			sourceTree = "<group>";
+		};
+		84F4137318BF28CB00F8F414 /* BlockUI */ = {
+			isa = PBXGroup;
+			children = (
+				84F4137418BF28CB00F8F414 /* BlockUI.h */,
+				84F4137518BF28CB00F8F414 /* BUIControl.h */,
+				84F4137618BF28CB00F8F414 /* BUIControl.m */,
+				84F4137718BF28CB00F8F414 /* BUIView.h */,
+				84F4137818BF28CB00F8F414 /* BUIView.m */,
+				84F4137918BF28CB00F8F414 /* ZXObject.h */,
+				84F4137A18BF28CB00F8F414 /* ZXObject.m */,
+			);
+			path = BlockUI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -533,6 +558,7 @@
 				84216D6218BDAD2E00007DC0 /* BUIView.m in Sources */,
 				84216D7B18BDEBA300007DC0 /* SideMenuCell.m in Sources */,
 				84178A5E18BC39B20028672C /* AllViewController.m in Sources */,
+				84F4137D18BF28CB00F8F414 /* ZXObject.m in Sources */,
 				84178A2C18BC2C6D0028672C /* main.m in Sources */,
 				84216D4F18BD92B200007DC0 /* ClickableUIImageView.m in Sources */,
 				84178A6718BC39FD0028672C /* SendToMeViewController.m in Sources */,
@@ -541,8 +567,10 @@
 				84216D5018BD92B200007DC0 /* factory.m in Sources */,
 				84216D6518BDAD2E00007DC0 /* UIScrollView+SVPullToRefresh.m in Sources */,
 				84178A6D18BC40620028672C /* LoginViewController.m in Sources */,
+				84F4137B18BF28CB00F8F414 /* BUIControl.m in Sources */,
 				84178A6A18BC3A080028672C /* MoreViewController.m in Sources */,
 				84216D7518BDD76100007DC0 /* DDMenuController.m in Sources */,
+				84F4137C18BF28CB00F8F414 /* BUIView.m in Sources */,
 				84216D4E18BD92B200007DC0 /* clickableUIView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

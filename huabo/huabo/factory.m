@@ -102,6 +102,7 @@
     [btn setFrame:frame];
     [btn setTitle:title forState:UIControlStateNormal];
     [btn setTag:tag];
+    [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [btn addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
     
     return btn;

@@ -7,6 +7,7 @@
 //
 
 #import "BaseViewController.h"
+#import "clickableUIView.h"
 
 @interface BaseViewController ()
 
@@ -35,6 +36,8 @@
     self.navigationItem.titleView = label;
     
 }
+
+
 
 -(void)showLeftButtonWithImageName:(NSString *)name target:(id)target action:(SEL)sel{
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
