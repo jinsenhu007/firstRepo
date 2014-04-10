@@ -119,3 +119,12 @@ typedef  NS_ENUM(NSUInteger, CommentType){
 #define kReplyByMeUrl kBaseUrl(@"/message/replybyme/?pageSize=10&token=%@")
 //----------------2.07 获取动态_提到当前登录用户的 get-------------------
 #define kAtMeUrl kBaseUrl(@"/message/atme/?pageSize=10&token=%@")
+
+//----------------2.08 获取动态_发给当前登录用户的系统消息 get-------------------
+#define kSysMsgUrl kBaseUrl(@"/message/system/?pageSize=10&token=%@")
+
+//----------------2.11 获取动态_单条动态更新内容 get-------------------
+#define kOneMsgDetailUrl kBaseUrl(@"/message/detail/?messageID=%d") ////注意这里没带token
+
+//----------------2.13 获取动态_群组消息 get-------------------
+#define kGroupMsgUrl kBaseUrl(@"/message/group_message/?groupID=%d")  ////注意这里没带token

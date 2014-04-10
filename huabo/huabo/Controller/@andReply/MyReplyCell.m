@@ -14,6 +14,7 @@
 #import "HtmlString.h"
 #import "RegexKitLite.h"
 #import "UIViewExt.h"
+#import "UIView+MakeAViewRoundCorner.h"
 
 #define kOriginalMsgWidth 220
 #define kTargetMsgWidth 250
@@ -36,6 +37,7 @@
     UserModel *um = [[UserMgr sharedInstance]readFromDisk];
     
     _headIcon = (ClickableUIImageView *)[self.contentView viewWithTag:100];
+    [_headIcon setRoundedCornerWithRadius:5.0f];
     [_headIcon setImageWithURL:[NSURL URLWithString:um.HeadSculpture100] placeholderImage:nil];
     NSLog(@"head %@",um.HeadSculpture100);
     _labelName = (UILabel *)[self.contentView viewWithTag:101];

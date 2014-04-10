@@ -114,6 +114,9 @@
 }
 
 - (void)_loadMyReply{
+    if (![JsDevice netOK]) {
+        return;
+    }
     NSLog(@"myreply %@",_strOfUrl);
     [jsHttpHandler jsHttpDownloadWithStrOfUrl:_strOfUrl withCache:_needCache completionBlock:^(id JSON) {
         if (!JSON) {

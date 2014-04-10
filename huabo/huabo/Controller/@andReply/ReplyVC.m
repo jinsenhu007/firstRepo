@@ -30,7 +30,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        
         self.hidesBottomBarWhenPushed = YES;
         
     }
@@ -87,7 +87,10 @@
 }
 
 - (void)_loadOrigionalData{
-   
+    if (![JsDevice netOK]) {
+        [MMProgressHUD dismissWithError:@"加载失败"];
+        return;
+    }
     NSLog(@"url %@",_strOfUrl);
     [jsHttpHandler jsHttpDownloadWithStrOfUrl:_strOfUrl withCache:_needCache completionBlock:^(id JSON){
        

@@ -185,6 +185,9 @@
              //返回的没有数据
         if ([[JSON objectForKey:@"Total"] intValue] == 0) {
             NSLog(@"没有更多数据了");
+            [MMProgressHUD setPresentationStyle:MMProgressHUDPresentationStyleShrink];
+            [MMProgressHUD showWithStatus:@"没有更多数据" ];
+            [MMProgressHUD dismissWithError:@"没有更多数据" title:nil afterDelay:0.5f];
             if (_tableView.pullToRefreshView.state == 2) {
                 [_tableView.pullToRefreshView stopAnimating];
                 return ;

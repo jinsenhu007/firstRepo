@@ -292,6 +292,12 @@
 		84A0335918F4D90C00FDF480 /* AtMeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84A0335718F4D90C00FDF480 /* AtMeVC.xib */; };
 		84A0335C18F4D93000FDF480 /* AtMeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A0335B18F4D93000FDF480 /* AtMeCell.m */; };
 		84A0335E18F4D94200FDF480 /* AtMeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84A0335D18F4D94200FDF480 /* AtMeCell.xib */; };
+		84A0336118F635BB00FDF480 /* AtMeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A0336018F635BB00FDF480 /* AtMeModel.m */; };
+		84A0336418F6789E00FDF480 /* SysMsgCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A0336318F6789E00FDF480 /* SysMsgCell.m */; };
+		84A0336618F678AE00FDF480 /* SysMsgCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84A0336518F678AE00FDF480 /* SysMsgCell.xib */; };
+		84A0336918F679EF00FDF480 /* SysMsgModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A0336818F679EF00FDF480 /* SysMsgModel.m */; };
+		84A0336F18F6993900FDF480 /* SingleTrendVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A0336D18F6993900FDF480 /* SingleTrendVC.m */; };
+		84A0337018F6993900FDF480 /* SingleTrendVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84A0336E18F6993900FDF480 /* SingleTrendVC.xib */; };
 		84B797A318E003A2003E12BF /* DepartsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B797A118E003A2003E12BF /* DepartsVC.m */; };
 		84B797A418E003A2003E12BF /* DepartsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84B797A218E003A2003E12BF /* DepartsVC.xib */; };
 		84B797AA18E00493003E12BF /* MyGroupVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84B797A818E00493003E12BF /* MyGroupVC.xib */; };
@@ -745,6 +751,16 @@
 		84A0335A18F4D93000FDF480 /* AtMeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AtMeCell.h; path = "Controller/@andReply/AtMeCell.h"; sourceTree = "<group>"; };
 		84A0335B18F4D93000FDF480 /* AtMeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AtMeCell.m; path = "Controller/@andReply/AtMeCell.m"; sourceTree = "<group>"; };
 		84A0335D18F4D94200FDF480 /* AtMeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AtMeCell.xib; sourceTree = "<group>"; };
+		84A0335F18F635BB00FDF480 /* AtMeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AtMeModel.h; path = model/AtMeModel.h; sourceTree = "<group>"; };
+		84A0336018F635BB00FDF480 /* AtMeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AtMeModel.m; path = model/AtMeModel.m; sourceTree = "<group>"; };
+		84A0336218F6789E00FDF480 /* SysMsgCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SysMsgCell.h; path = Controller/sysMsg/SysMsgCell.h; sourceTree = "<group>"; };
+		84A0336318F6789E00FDF480 /* SysMsgCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SysMsgCell.m; path = Controller/sysMsg/SysMsgCell.m; sourceTree = "<group>"; };
+		84A0336518F678AE00FDF480 /* SysMsgCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SysMsgCell.xib; sourceTree = "<group>"; };
+		84A0336718F679EF00FDF480 /* SysMsgModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SysMsgModel.h; path = model/SysMsgModel.h; sourceTree = "<group>"; };
+		84A0336818F679EF00FDF480 /* SysMsgModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SysMsgModel.m; path = model/SysMsgModel.m; sourceTree = "<group>"; };
+		84A0336C18F6993900FDF480 /* SingleTrendVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SingleTrendVC.h; path = Controller/singleTrend/SingleTrendVC.h; sourceTree = "<group>"; };
+		84A0336D18F6993900FDF480 /* SingleTrendVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SingleTrendVC.m; path = Controller/singleTrend/SingleTrendVC.m; sourceTree = "<group>"; };
+		84A0336E18F6993900FDF480 /* SingleTrendVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SingleTrendVC.xib; path = Controller/singleTrend/SingleTrendVC.xib; sourceTree = "<group>"; };
 		84B797A018E003A2003E12BF /* DepartsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DepartsVC.h; path = Controller/department/DepartsVC.h; sourceTree = "<group>"; };
 		84B797A118E003A2003E12BF /* DepartsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DepartsVC.m; path = Controller/department/DepartsVC.m; sourceTree = "<group>"; };
 		84B797A218E003A2003E12BF /* DepartsVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DepartsVC.xib; path = Controller/department/DepartsVC.xib; sourceTree = "<group>"; };
@@ -1294,6 +1310,7 @@
 		84178A4F18BC31B30028672C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				84A0336B18F6991B00FDF480 /* singleTrend */,
 				84D482D018EE52EB0062A2D0 /* sysMsg */,
 				84D482CA18EE52AF0062A2D0 /* allGroup */,
 				84D482C418EE52060062A2D0 /* @andReply */,
@@ -1377,6 +1394,10 @@
 				84B797B118E00AAC003E12BF /* GroupModel.m */,
 				84D482DB18EE5A540062A2D0 /* ReplyModel.h */,
 				84D482DC18EE5A540062A2D0 /* ReplyModel.m */,
+				84A0335F18F635BB00FDF480 /* AtMeModel.h */,
+				84A0336018F635BB00FDF480 /* AtMeModel.m */,
+				84A0336718F679EF00FDF480 /* SysMsgModel.h */,
+				84A0336818F679EF00FDF480 /* SysMsgModel.m */,
 			);
 			name = message;
 			sourceTree = "<group>";
@@ -1619,6 +1640,16 @@
 			path = images;
 			sourceTree = "<group>";
 		};
+		84A0336B18F6991B00FDF480 /* singleTrend */ = {
+			isa = PBXGroup;
+			children = (
+				84A0336C18F6993900FDF480 /* SingleTrendVC.h */,
+				84A0336D18F6993900FDF480 /* SingleTrendVC.m */,
+				84A0336E18F6993900FDF480 /* SingleTrendVC.xib */,
+			);
+			name = singleTrend;
+			sourceTree = "<group>";
+		};
 		84B7979F18E00366003E12BF /* department */ = {
 			isa = PBXGroup;
 			children = (
@@ -1683,6 +1714,9 @@
 				84D482D118EE530C0062A2D0 /* SysMsgVC.h */,
 				84D482D218EE530C0062A2D0 /* SysMsgVC.m */,
 				84D482D318EE530C0062A2D0 /* SysMsgVC.xib */,
+				84A0336218F6789E00FDF480 /* SysMsgCell.h */,
+				84A0336318F6789E00FDF480 /* SysMsgCell.m */,
+				84A0336518F678AE00FDF480 /* SysMsgCell.xib */,
 			);
 			name = sysMsg;
 			sourceTree = "<group>";
@@ -1947,6 +1981,7 @@
 				84497EB818D6853300134789 /* 赞未选中.png in Resources */,
 				84497EAB18D305EA00134789 /* navBG.png in Resources */,
 				84497EB418D683F000134789 /* JsBtn.xib in Resources */,
+				84A0336618F678AE00FDF480 /* SysMsgCell.xib in Resources */,
 				84497EE418D6D69C00134789 /* 添加图片.png in Resources */,
 				84497ED418D6CA1300134789 /* 选项栏.png in Resources */,
 				84497EC918D6928F00134789 /* CusBtn.xib in Resources */,
@@ -1976,6 +2011,7 @@
 				840AFF3418C8066800AACEA2 /* MLTableAlertBackground@2x.png in Resources */,
 				84A0335918F4D90C00FDF480 /* AtMeVC.xib in Resources */,
 				84497EB018D3069300134789 /* Default@2x.png in Resources */,
+				84A0337018F6993900FDF480 /* SingleTrendVC.xib in Resources */,
 				84E4DB4C18DBDA8C001C5FE6 /* DetailVC.xib in Resources */,
 				8479725618DAB6EA00B15141 /* 粉丝.png in Resources */,
 				84497ED318D6CA1300134789 /* 返回@2x.png in Resources */,
@@ -2047,6 +2083,7 @@
 				84E4DB5318DC0F5E001C5FE6 /* CommentCell.m in Sources */,
 				840AFF6F18C807C500AACEA2 /* clickableUIView.m in Sources */,
 				840AFF7518C807C500AACEA2 /* UIView+MakeAViewRoundCorner.m in Sources */,
+				84A0336F18F6993900FDF480 /* SingleTrendVC.m in Sources */,
 				84497D9118CD8D3B00134789 /* BaseModel.m in Sources */,
 				840AFF2918C8066800AACEA2 /* ASIHTTPRequest.m in Sources */,
 				842299EE18C454D000AB487C /* weiboViewController.m in Sources */,
@@ -2076,6 +2113,7 @@
 				84497D9F18CDB3FD00134789 /* HtmlString.m in Sources */,
 				840AFF3E18C8066800AACEA2 /* PopupListComponent.m in Sources */,
 				840AFF4E18C8066800AACEA2 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
+				84A0336418F6789E00FDF480 /* SysMsgCell.m in Sources */,
 				84E4DB4B18DBDA8C001C5FE6 /* DetailVC.m in Sources */,
 				84497DC718CEBCDA00134789 /* SDWebImageCompat.m in Sources */,
 				840AFF7418C807C500AACEA2 /* UIUtils.m in Sources */,
@@ -2112,11 +2150,13 @@
 				840AFF3118C8066800AACEA2 /* DDMenuController.m in Sources */,
 				84497F2618D9903600134789 /* MMProgressHUD.m in Sources */,
 				84497F2318D9903600134789 /* MMHud.m in Sources */,
+				84A0336918F679EF00FDF480 /* SysMsgModel.m in Sources */,
 				84178A6D18BC40620028672C /* LoginViewController.m in Sources */,
 				84497E8518D18A4C00134789 /* PNLineChart.m in Sources */,
 				84E606C218ED3CB900DCF0C3 /* MsgCell.m in Sources */,
 				840AFFC818C80A5E00AACEA2 /* TSBlurView.m in Sources */,
 				84497DD018CEBCDA00134789 /* UIImage+WebP.m in Sources */,
+				84A0336118F635BB00FDF480 /* AtMeModel.m in Sources */,
 				840AFF5618C807A100AACEA2 /* commSetVC.m in Sources */,
 				840AFF9618C8099B00AACEA2 /* MsgVC.m in Sources */,
 				84497DA118CDB3FD00134789 /* RegexKitLite.m in Sources */,

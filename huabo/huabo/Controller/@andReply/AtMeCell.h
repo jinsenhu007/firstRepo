@@ -10,6 +10,7 @@
 @class ReplyModel;
 @class ClickableUIImageView;
 #import "RCLabel.h"
+#import "AtMeModel.h"
 
 @interface AtMeCell : UITableViewCell<RCLabelDelegate>
 {
@@ -21,8 +22,8 @@
 }
 
 
-@property (retain,nonatomic) ReplyModel *model;
+@property (retain,nonatomic) AtMeModel *model;
 
 
-+ (CGFloat)getCellHeightWithModel:(ReplyModel *)oneModel;
++ (CGFloat)getCellHeightWithModel:(AtMeModel *)oneModel;
 @end

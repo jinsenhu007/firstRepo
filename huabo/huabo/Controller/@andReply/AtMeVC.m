@@ -8,7 +8,7 @@
 
 #import "AtMeVC.h"
 #import "AtMeCell.h"
-#import "ReplyModel.h"
+#import "AtMeModel.h"
 #import "Const.h"
 #import "jsHttpHandler.h"
 #import "SVPullToRefresh.h"
@@ -43,7 +43,7 @@
     
     _arrData = [NSMutableArray new];
     
-    IOS7;
+    //IOS7;
     //self.tableView.frame = CGRECT_HAVE_NAV(0, 0, kScreenWidth, kScreenHeight-64-49-40);
     __weak AtMeVC *weakSelf = self;
     [self.tableView addPullToRefreshWithActionHandler:^{
@@ -92,6 +92,9 @@
 }
 
 - (void)load{
+    if (![JsDevice netOK]) {
+        return;
+    }
      NSLog(@"url %@",_strOfUrl);
     [jsHttpHandler jsHttpDownloadWithStrOfUrl:_strOfUrl withCache:_needCache completionBlock:^(id JSON) {
         if(!JSON) return ;
@@ -112,31 +115,31 @@
         _maxID = [[JSON objectForKey:@"MaxID"] integerValue];
         
         for (NSDictionary *dict in [JSON objectForKey:@"Rows"]) {
-            ReplyModel *model = [[ReplyModel alloc]init];
+            AtMeModel *model = [[AtMeModel alloc]init];
             
              model.MessageIndexID = [dict objectForKey:@"MessageIndexID"];
-//             model.OriginalUserID = [dict objectForKey:@"OriginalUserID"];
-//            if ([model.OriginalUserID integerValue] == 0) {
-//                //
-//                model.OriginalMessageContent = @"源消息已删除";
-//            }else{
-//               
-//                model.OriginalMessageContent = [dict objectForKey:@"OriginalMessageContent"];
-//                model.OriginalMessageID = [dict objectForKey:@"OriginalMessageID"];
-//                model.OriginalUserHeadSculpture48 = [dict objectForKey:@"OriginalUserHeadSculpture48"];
-//                model.OriginalUserName = [dict objectForKey:@"OriginalUserName"];
-//            }
+             model.OriginalUserID = [dict objectForKey:@"OriginalUserID"];
+            if ([model.OriginalUserID integerValue] == 0) {
+                //
+                model.OriginalMessageContent = @"源消息已删除";
+            }else{
+               
+                model.OriginalMessageContent = [dict objectForKey:@"OriginalMessageContent"];
+                model.OriginalMessageID = [dict objectForKey:@"OriginalMessageID"];
+                model.OriginalUserHeadSculpture48 = [dict objectForKey:@"OriginalUserHeadSculpture48"];
+                model.OriginalUserName = [dict objectForKey:@"OriginalUserName"];
+            }
            
-//            model.SubTimeStr = [dict objectForKey:@"SubTimeStr"];
-//            model.TargetMessageContent = [dict objectForKey:@"TargetMessageContent"];
-//            model.TargetMessageID = [dict objectForKey:@"TargetMessageID"];
-//            model.TargetMessageType = [[dict objectForKey:@"TargetMessageType"] intValue];
-//            model.TargetUserHeadSculpture48 = [dict objectForKey:@"TargetUserHeadSculpture48"];
-//            model.TargetUserID = [dict objectForKey:@"TargetUserID"];
-//            model.TargetUserLevel = [dict objectForKey:@"TargetUserLevel"];
-//            model.TransferedMessageID = [dict objectForKey:@"TransferedMessageID"];
-//            model.TransferedUserID = [dict objectForKey:@"TransferedUserID"];
-//            model.TargetUserName = [dict objectForKey:@"TargetUserName"];
+            model.SubTimeStr = [dict objectForKey:@"SubTimeStr"];
+            model.TargetMessageContent = [dict objectForKey:@"TargetMessageContent"];
+            model.TargetMessageID = [dict objectForKey:@"TargetMessageID"];
+            model.TargetMessageType = [[dict objectForKey:@"TargetMessageType"] intValue];
+            model.TargetUserHeadSculpture48 = [dict objectForKey:@"TargetUserHeadSculpture48"];
+            model.TargetUserID = [dict objectForKey:@"TargetUserID"];
+            model.TargetUserLevel = [dict objectForKey:@"TargetUserLevel"];
+            model.TransferedMessageID = [dict objectForKey:@"TransferedMessageID"];
+            model.TransferedUserID = [dict objectForKey:@"TransferedUserID"];
+            model.TargetUserName = [dict objectForKey:@"TargetUserName"];
             
             [_arrData addObject:model];
         }
@@ -170,7 +173,7 @@
         return cell;
     }
     
-    ReplyModel *m = [_arrData objectAtIndex:indexPath.row];
+    AtMeModel *m = [_arrData objectAtIndex:indexPath.row];
     cell.model = m;
     return cell;
 }
@@ -179,7 +182,7 @@
     if (!_arrData.count) {
         return 50;
     }
-    ReplyModel *m = [_arrData objectAtIndex:indexPath.row];
+    AtMeModel *m = [_arrData objectAtIndex:indexPath.row];
     
     float h = [AtMeCell getCellHeightWithModel:m ];
     return h;

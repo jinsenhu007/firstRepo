@@ -14,7 +14,7 @@
 #import "UIView+MakeAViewRoundCorner.h"
 #import "ClickableUIImageView.h"
 #import "ReplyModel.h"
-
+#import "UIView+MakeAViewRoundCorner.h"
 
 #define kTargetFont 14
 #define kSourceFont 13
@@ -35,6 +35,7 @@
 
 - (void)awakeFromNib{
     _headIcon = (ClickableUIImageView *)[self.contentView viewWithTag:100];
+    [_headIcon setRoundedCornerWithRadius:5.0f];
     _nameLabel = (UILabel *)[self.contentView viewWithTag:101];
     
     _content = [[RCLabel alloc]initWithFrame:CGRectZero];
@@ -49,6 +50,7 @@
 }
 
 - (void)layoutSubviews{
+    [super layoutSubviews];
     [_headIcon setImageWithURL:[NSURL URLWithString:_model.TargetUserHeadSculpture48] placeholderImage:nil];
     _nameLabel.text = _model.TargetUserName;
     
@@ -63,7 +65,7 @@
     NSString *s1 = nil;
     if ([_model.OriginalUserID integerValue] == 0) {
         //源消息被删除
-        s1 = _model.SourceMessageContent;
+        s1 = _model.OriginalMessageContent;
     }else{
         s1 = [NSString stringWithFormat:@"%@ %@",_model.OriginalUserName,_model.OriginalMessageContent];
     }
@@ -90,7 +92,7 @@
     NSString *s02 = nil;
     if ([oneModel.OriginalUserID integerValue] == 0) {
         //源消息被删除
-        s02 = oneModel.SourceMessageContent;
+        s02 = oneModel.OriginalMessageContent;
     }else{
         s02 = [NSString stringWithFormat:@"%@ %@",oneModel.OriginalUserName,oneModel.OriginalMessageContent];
     }

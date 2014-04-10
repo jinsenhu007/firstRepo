@@ -9,6 +9,7 @@
 #import "HtmlString.h"
 #import <Foundation/NSObjCRuntime.h>
 #import "RegexKitLite.h"
+#import "Const.h"
 
 @implementation HtmlString
 
@@ -47,25 +48,56 @@
         }
         [test_arr release];
     }
-/*
+
     
-    //解析&
-    NSString *regex_dot = @"\\$\\*?[\u4e00-\u9fa5|a-zA-Z|\\d]{2,8}(\\((SH|SZ)?\\d+\\))?";//&的正则表达式
-    NSArray *array_dot = [text componentsMatchedByRegex:regex_dot];
+    //解析$
+  //  NSString *regex_dot = @"\\$\\*?[\u4e00-\u9fa5|a-zA-Z|\\d]{2,8}(\\((SH|SZ)?\\d+\\))?";//&的正则表达式
+    NSString *regex_doller = @"\\$\\$\\$(\\d+\\|\\w+)\\$\\$\\$";
+    NSArray *array_dot = [text componentsMatchedByRegex:regex_doller];
     if ([array_dot count]) {
         NSMutableArray *test_arr = [[NSMutableArray alloc] init];
         for (NSString *str in array_dot) {
             NSRange range = [text rangeOfString:str];
             if (![test_arr containsObject:str]) {
                 [test_arr addObject:str];
-                NSString *funUrlStr = [NSString stringWithFormat:@"<a href=%@>%@</a>",str, str];
+                //  $$$12|kk$$$
+                NSString *heId = [[str componentsMatchedByRegex:@"\\d+"] lastObject];
+                NSString *name = [[str componentsMatchedByRegex:@"\\w+"] lastObject];
+                ////以下组装在SysMsg中第一次使用////
+                NSString *url = [NSString stringWithFormat:kOneMsgDetailUrl,[heId integerValue]];
+                NSString *funUrlStr = [NSString stringWithFormat:@"<a href=%@>%@</a>",url, name];
                 text = [text stringByReplacingCharactersInRange:NSMakeRange(range.location, [str length]) withString:funUrlStr];
+               
             }
         }
         [test_arr release];
     }
-*/
-    /*
+    
+    //解析%（包含的是群组）
+    
+    NSString *regex_group = @"%{3}(\\d+\\|\\w+)%{3}";
+    NSArray *array_group = [text componentsMatchedByRegex:regex_group];
+    if ([array_group count]) {
+        NSMutableArray *test_arr = [[NSMutableArray alloc] init];
+        for (NSString *str in array_group) {
+            NSRange range = [text rangeOfString:str];
+            if (![test_arr containsObject:str]) {
+                [test_arr addObject:str];
+                //  $$$12|kk$$$
+                NSString *heId = [[str componentsMatchedByRegex:@"\\d+"] lastObject];
+                NSString *name = [[str componentsMatchedByRegex:@"\\w+"] lastObject];
+                ////以下组装在SysMsg中第一次使用////
+                NSString *url = [NSString stringWithFormat:kGroupMsgUrl,[heId integerValue]];
+                NSString *funUrlStr = [NSString stringWithFormat:@"<a href=%@>%@</a>",url, name];
+                text = [text stringByReplacingCharactersInRange:NSMakeRange(range.location, [str length]) withString:funUrlStr];
+                
+            }
+        }
+        [test_arr release];
+    }
+
+
+  /*
     //解析话题
     NSString *regex_pound = @"#([^\\#|.]+)#";//话题的正则表达式
     NSArray *array_pound = [text componentsMatchedByRegex:regex_pound];
