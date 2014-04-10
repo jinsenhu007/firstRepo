@@ -8,7 +8,21 @@
 
 #import "JsDevice.h"
 
+
 @implementation JsDevice
+
+static id _s = nil;
++(id)sharedReach{
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _s = [Reachability reachabilityWithHostname:@"www.baidu.com"];
+    });
+    return _s;
+}
+
++(BOOL)netOK{
+    return [[[self class] sharedReach] isReachable];
+}
 
 +(float)getOSVersion{
     return [[[UIDevice currentDevice] systemVersion]floatValue];

@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "Reachability.h"
 @interface JsDevice : NSObject
 
 +(float)getOSVersion;
@@ -15,6 +15,8 @@
 +(float)getScreenHeight;
 +(NSString *)getIphoneName;
 
++(Reachability*)sharedReach;
++(BOOL)netOK;
 @end
 
 
@@ -33,10 +35,7 @@
 #define SysFont(f) [UIFont systemFontOfSize:f]
 #define BoldFont(f) [UIFont boldSystemFontOfSize:f]
 
-#define PropertyString(p) @property(nonatomic,copy) NSString *p
-#define PropertyFloat(p) @property (nonatomic, assign) float p;
-#define PropertyInt(p) @property (nonatomic, assign) NSInteger p;
-#define PropertyUInt(p) @property (nonatomic, assign) NSUInteger p;
+
 
 #define kDeviceSerialNo [[[UIDevice currentDevice] identifierForVendor] UUIDString]
 

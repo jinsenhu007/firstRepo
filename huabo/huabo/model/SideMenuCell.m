@@ -15,8 +15,10 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         // Initialization code
-        self.backgroundColor = [UIColor blackColor];
-        
+        self.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"sideMenuCellBG.png"]];;
+        UIView *view = [[UIView alloc]initWithFrame:self.bounds];
+        view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"sideMenuBG.png"]];
+        self.selectedBackgroundView = view;
     }
     return self;
 }

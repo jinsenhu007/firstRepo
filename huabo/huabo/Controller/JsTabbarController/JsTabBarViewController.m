@@ -8,6 +8,8 @@
 
 #import "JsTabBarViewController.h"
 #import "JsDevice.h"
+#import "TSMessageView.h"
+#import "Reachability.h"
 
 @interface JsTabBarViewController ()
 
@@ -28,9 +30,37 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-   
-        self.tabBar.selectionIndicatorImage = [UIImage imageNamed:@"tabbarItem_press.png"];
+  // [TSMessage setDefaultViewController:self];
+    self.tabBar.selectionIndicatorImage = [UIImage imageNamed:@"下按钮选中.png"];
     
+//    Reachability *reach = [JsDevice sharedReach];
+
+    Reachability *reach = [JsDevice sharedReach];
+    
+    
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(reachabilityChanged:)
+                                                    name:kReachabilityChangedNotification
+                                                   object:nil];
+    
+//    reach.reachableBlock = ^(Reachability *reachability){
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//            [TSMessage showNotificationWithTitle:@"网络恢复" type:TSMessageNotificationTypeMessage];
+//        });
+//        
+//    };
+//    
+//    reach.unreachableBlock = ^(Reachability *reachability){
+//        dispatch_queue_t myQueue =  dispatch_get_main_queue();
+//       
+//        dispatch_async(myQueue, ^{
+//            [TSMessage showNotificationWithTitle:@"网络断开" type:TSMessageNotificationTypeMessage];
+//            [TSMessage iOS7StyleEnabled];
+//        });
+//      
+//    };
+    
+    [reach startNotifier];
 	// Do any additional setup after loading the view.
 }
 
@@ -50,16 +80,31 @@
         }
        // UIImage *imag = [UIImage imageNamed:imageName];
         UIColor *color = [UIColor blackColor];
-        UIColor *colorSelect = [UIColor whiteColor];
+        UIColor *colorSelect = [UIColor colorWithRed:23 green:99 blue:151 alpha:1];
         UITabBarItem *item = [[UITabBarItem alloc]initWithTitle:title image:img tag:tag++];
         
-        [item setTitlePositionAdjustment:UIOffsetMake(0, -15)];
+       // [item setTitlePositionAdjustment:UIOffsetMake(0, -15)];
         [item setTitleTextAttributes:@{NSForegroundColorAttributeName: color} forState:UIControlStateNormal];
         [item setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:colorSelect,UITextAttributeTextColor, nil] forState:UIControlStateSelected];
         [item setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:SysFont(13),UITextAttributeFont, nil] forState:UIControlStateNormal];
         c.tabBarItem = item;
     }
     [super setViewControllers:arr];
+}
+
+
+-(void)reachabilityChanged:(NSNotification*)note
+{
+    Reachability * reach = [note object];
+    NetworkStatus status = [reach currentReachabilityStatus];
+    if(status == NotReachable)
+    {
+         [TSMessage showNotificationWithTitle:@"网络断开" type:TSMessageNotificationTypeMessage];
+    }
+    else
+    {
+        // [TSMessage showNotificationWithTitle:@"" type:TSMessageNotificationTypeMessage];
+    }
 }
 
 - (void)didReceiveMemoryWarning

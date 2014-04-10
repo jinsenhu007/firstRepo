@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>[哈哈]</key>
+	<string>hanx_thumb.gif</string>
+	<key>[呵呵]</key>
+	<string>wx_thumb.gif</string>
+	<key>[威武]</key>
+	<string>vw_thumb.gif</string>
+	<key>[太阳]</key>
+	<string>sun.gif</string>
+	<key>[礼物]</key>
+	<string>gift.gif</string>
+	<key>[玫瑰]</key>
+	<string>rose.gif</string>
+	<key>[心碎]</key>
+	<string>unheart.gif</string>
+	<key>[心]</key>
+	<string>heart.gif</string>
+	<key>[蛋糕]</key>
+	<string>cake.gif</string>
+	<key>[OK]</key>
+	<string>ok.gif</string>
+	<key>[差劲]</key>
+	<string>small.gif</string>
+	<key>[Good]</key>
+	<string>good.gif</string>
+	<key>[耶]</key>
+	<string>yeah.gif</string>
+	<key>[握手]</key>
+	<string>handshake.gif</string>
+	<key>[顶]</key>
+	<string>qiao_thumb.gif</string>
+	<key>[吐]</key>
+	<string>tu_thumb.gif</string>
+	<key>[疑问]</key>
+	<string>yw_thumb.gif</string>
+	<key>[鼓掌]</key>
+	<string>gz_thumb.gif</string>
+	<key>[失望]</key>
+	<string>ng_thumb.gif</string>
+	<key>[花心]</key>
+	<string>se_thumb.gif</string>
+	<key>[得意]</key>
+	<string>dy_thumb.gif</string>
+	<key>[可爱]</key>
+	<string>ka_thumb.gif</string>
+	<key>[偷笑]</key>
+	<string>tx_thumb.gif</string>
+	<key>[糗]</key>
+	<string>qiu_thumb.gif</string>
+	<key>[泪]</key>
+	<string>lei_thumb.gif</string>
+</dict>
+</plist>

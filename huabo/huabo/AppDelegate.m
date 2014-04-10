@@ -8,15 +8,17 @@
 
 #import "AppDelegate.h"
 #import "JsTabBarViewController.h"
-#import "AllViewController.h"
-#import "AtMeViewController.h"
-#import "ReplyMeViewController.h"
-#import "SendToMeViewController.h"
-#import "MoreViewController.h"
+#import "TrendsVC.h"
+#import "MsgVC.h"
+#import "ContactorVC.h"
+#import "SetVC.h"
+
 #import "LoginViewController.h"
 
 #import "DDMenuController.h"
 #import "SideMenuViewController.h"
+
+#import "TSMessageView.h"
 
 @implementation AppDelegate
 
@@ -27,6 +29,12 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
+    [[NSNotificationCenter defaultCenter] addObserverForName:@"LS" object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note) {
+//        NSLog(@"login Success %@",note.name);
+        [self switchToMainUI];
+    }];
+
+        
     if ([self isFirstLogin]) {
         //登录界面
         [self createLoginUI];
@@ -40,26 +48,31 @@
     return YES;
 }
 
+
 -(void)createLoginUI{
     UINavigationController *loginNav = [self createNav:@"LoginViewController"];
     self.window.rootViewController = loginNav;
 }
 
 -(void)switchToMainUI{
-    NSDictionary *allNav = [self createNav:@"AllViewController" withName:@"全部" withImage:nil];
-    NSDictionary *atMeNav = [self createNav:@"AtMeViewController" withName:@"@我的" withImage:nil];
-    NSDictionary *replyNav = [self createNav:@"ReplyMeViewController" withName:@"回复我的" withImage:nil];
-    NSDictionary *sendNav = [self createNav:@"SendToMeViewController" withName:@"发给我的" withImage:nil];
-    NSDictionary *moreNav = [self createNav:@"MoreViewController" withName:@"更多" withImage:nil];
+    NSDictionary *trendsNav = [self createNav:@"TrendsVC" withName:@"动态" withImage:@"动态.png"];
+    NSDictionary *msgNav = [self createNav:@"MsgVC" withName:@"信息" withImage:@"信息.png"];
+    NSDictionary *contactorNav = [self createNav:@"ContactorVC" withName:@"联系人" withImage:@"联系人.png"];
+    NSDictionary *setNav = [self createNav:@"SetVC" withName:@"设置" withImage:@"设置.png"];
+  //  NSDictionary *moreNav = [self createNav:@"MoreViewController" withName:@"更多" withImage:nil];
     
     JsTabBarViewController *tab = [[JsTabBarViewController alloc]init];
-    [tab setViewControllers:[NSArray arrayWithObjects:allNav,atMeNav,replyNav,sendNav,moreNav, nil]];
+    [tab setViewControllers:[NSArray arrayWithObjects:trendsNav,msgNav,contactorNav,setNav, nil]];
     DDMenuController *rootController = [[DDMenuController alloc]initWithRootViewController:tab];
     _menuController = rootController;
     
     SideMenuViewController *side = [[SideMenuViewController alloc]init];
+//    UINavigationController *navSide = [[UINavigationController alloc]initWithRootViewController:side];
     _menuController.leftViewController = side;
+    
     self.window.rootViewController = _menuController;
+    
+    
 }
 
 -(NSDictionary*)createNav:(NSString*)clsName withName:(NSString*)name withImage:(NSString*)imageName{
@@ -77,12 +90,12 @@
     UIViewController *vc = [[cls alloc]init];
     
     UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:vc];
-    [vc.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navBG.png"] forBarMetrics:UIBarMetricsDefault];
+    //[vc.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navBG.png"] forBarMetrics:UIBarMetricsDefault];
     return nav;
 }
 
 -(BOOL)isFirstLogin{
-    return NO;
+    return YES;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

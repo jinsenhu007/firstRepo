@@ -21,4 +21,9 @@
 //------------下面是本项目-------------
 -(void)showLeftButtonWithImageName:(NSString *)name target:(id)target action:(SEL)sel;
 -(void)showRightButtonWithImageName:(NSString*)name target:(id)target action:(SEL)sel;
+
+-(void)showBackBtnTitle:(NSString *)name target:(id)target action:(SEL)sel;
+
+//weibo界面用
+- (void)showRightButtonOfSureWithName:(NSString*)name target:(id)target action:(SEL)sel;
 @end

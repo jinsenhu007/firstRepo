@@ -9,6 +9,7 @@
 #import "BaseViewController.h"
 #import "clickableUIView.h"
 
+
 @interface BaseViewController ()
 
 @end
@@ -32,7 +33,7 @@
     label.backgroundColor = [UIColor clearColor];
     label.font = [UIFont systemFontOfSize:20];
     //label.textColor = [UIColor colorWithRed:0.2 green:0.2 blue:0.7 alpha:1];
-    label.textColor = [UIColor whiteColor];
+    label.textColor = [UIColor blackColor];
     self.navigationItem.titleView = label;
     
 }
@@ -44,6 +45,7 @@
     [btn setImage:[UIImage imageNamed:name] forState:UIControlStateNormal];
     [btn addTarget:target action:sel forControlEvents:UIControlEventTouchUpInside];
     btn.frame = CGRectMake(0, 0, 30, 30);
+    btn.showsTouchWhenHighlighted = YES;
     
     UIBarButtonItem *btnItem = [[UIBarButtonItem alloc]initWithCustomView:btn];
     self.navigationItem.leftBarButtonItem = btnItem;
@@ -54,6 +56,8 @@
     [btn setImage:[UIImage imageNamed:name] forState:UIControlStateNormal];
     [btn addTarget:target action:sel forControlEvents:UIControlEventTouchUpInside];
     btn.frame = CGRectMake(0, 0, 30, 30);
+    btn.showsTouchWhenHighlighted = YES;
+
     
     UIBarButtonItem *btnItem = [[UIBarButtonItem alloc]initWithCustomView:btn];
     self.navigationItem.rightBarButtonItem = btnItem;
@@ -91,8 +95,8 @@
     UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(0, 3,button.bounds.size.width, 25)];
     label.text = str;
     label.textAlignment = NSTextAlignmentCenter;
-    label.textColor = [UIColor blackColor];
-    label.font = [UIFont systemFontOfSize:12];
+    label.textColor = [UIColor colorWithRed:75 green:188 blue:241 alpha:0.8];
+    label.font = [UIFont systemFontOfSize:16];
     label.backgroundColor = [UIColor clearColor];
     [button addSubview:label];
     
@@ -131,12 +135,29 @@
 }
 
 
+-(void)showBackBtnTitle:(NSString *)name target:(id)target action:(SEL)sel{
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeSystem];
+       btn.frame = CGRectMake(0, 0, 45, 40);
+    [btn setTitle:name forState:UIControlStateNormal];
+    [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [btn addTarget:target action:sel forControlEvents:UIControlEventTouchUpInside];
+    
+    UIBarButtonItem *btItem = [[UIBarButtonItem alloc]initWithCustomView:btn];
+    self.navigationItem.leftBarButtonItem = btItem;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 }
 
+- (void)showRightButtonOfSureWithName:(NSString*)name target:(id)target action:(SEL)sel{
+    
+    UIBarButtonItem *btnItem = [[UIBarButtonItem alloc]initWithTitle:name style:UIBarButtonItemStylePlain target:target action:sel];
+
+    self.navigationItem.rightBarButtonItem = btnItem;
+}
 
 
 - (void)didReceiveMemoryWarning
