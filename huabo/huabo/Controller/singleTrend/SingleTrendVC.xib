@@ -7,6 +7,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SingleTrendVC">
             <connections>
+                <outlet property="headIcon" destination="Uof-oN-jgc" id="FGr-uX-lYQ"/>
+                <outlet property="labelName" destination="6DZ-33-KZ8" id="v1s-MK-eeu"/>
+                <outlet property="msgSource" destination="dr2-Dh-OvS" id="U6n-K4-9zj"/>
+                <outlet property="subTime" destination="mec-aM-uts" id="GWu-qE-b28"/>
+                <outlet property="tHeaderView" destination="Il2-q1-Zh3" id="XD2-Vj-x81"/>
+                <outlet property="tableView" destination="5lN-0f-kmt" id="MpD-vk-VKu"/>
                 <outlet property="view" destination="1" id="3"/>
             </connections>
         </placeholder>
@@ -16,7 +22,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="5lN-0f-kmt">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
@@ -30,7 +36,7 @@
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
         <view contentMode="scaleToFill" id="Il2-q1-Zh3">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="94"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="67"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Uof-oN-jgc" customClass="ClickableUIImageView">

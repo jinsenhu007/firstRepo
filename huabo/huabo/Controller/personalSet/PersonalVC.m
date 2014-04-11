@@ -53,7 +53,7 @@
     }else{
         _jobNum.text = _uModel.JobNumber;
     }
-    if ( [_uModel.TelPhone isKindOfClass:[NSNull class]] ||_uModel.TelPhone.length == 0 ) {
+    if ( [_uModel.TelPhone isKindOfClass:[NSNull class]]  ) {//对于[NSNull length]会奔溃
         _telNum.text = @"暂无数据";
     }else{
         _telNum.text = _uModel.TelPhone;
@@ -84,6 +84,7 @@
 - (void)_loadUserInfo:(NSInteger)userId{
     UserModel *m = [[UserMgr sharedInstance] readFromDisk];
     NSString *str = [NSString stringWithFormat:kUserInfoUrl,userId,m.Token];
+    NSLog(@"++= %@",str);
     [jsHttpHandler jsHttpDownloadWithStrOfUrl:str withCache:YES completionBlock:^(id JSON) {
         if (JSON == nil) return ;
         //NSLog(@"%@",JSON);

@@ -40,7 +40,7 @@
             if (![test_arr containsObject:str]) {
                 [test_arr addObject:str];
                 //###23|哈哈###
-                NSString *heId = [[str componentsMatchedByRegex:@"\\d+"] lastObject];
+                NSString *heId = [[str componentsMatchedByRegex:@"\\d+"] firstObject];//注意一定要是第一个（因为人名中也可能含有数字）
                 NSString *name = [[str componentsMatchedByRegex:@"\\w+"] lastObject];
                 NSString *funUrlStr = [NSString stringWithFormat:@"<a href=%@>@%@</a>",heId, name];
                 text = [text stringByReplacingCharactersInRange:NSMakeRange(range.location, [str length]) withString:funUrlStr];

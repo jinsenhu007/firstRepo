@@ -67,8 +67,11 @@
         UIViewController *vc = [self _getMainVC];
         SingleTrendVC *st = [[SingleTrendVC alloc]init];
         st.strOfUrl = url;
+        
         [vc.navigationController pushViewController:st animated:YES];
     }
+    
+    
 }
 
 - (UIViewController *)_getMainVC{

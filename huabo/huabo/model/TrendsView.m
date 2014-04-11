@@ -306,10 +306,13 @@
 }
 - (void)RCLabel:(id)RCLabel didSelectLinkWithURL:(NSString*)url{
     NSLog(@"%@",url);
-    UIViewController *vc = [self _getMianController];
-    PersonalVC *pvc = [[PersonalVC alloc]init];
-    pvc.userId = [url integerValue];
-    [vc.navigationController pushViewController:pvc animated:YES];
+    if ([url integerValue] != 0) {
+        UIViewController *vc = [self _getMianController];
+        PersonalVC *pvc = [[PersonalVC alloc]init];
+        pvc.userId = [url integerValue];
+        [vc.navigationController pushViewController:pvc animated:YES];
+    }
+    
 }
 
 - (void)RCLabel:(id)RCLabel didChangedSize:(CGSize)size{
