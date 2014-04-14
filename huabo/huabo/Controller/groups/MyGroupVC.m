@@ -102,9 +102,7 @@
     myself.GroupName = @"仅自己";
     myself.GroupNameShort = @"仅自己";
     [_arrData addObject:myself];
-    
-    
-    
+
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{

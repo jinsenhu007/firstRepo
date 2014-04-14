@@ -128,3 +128,9 @@ typedef  NS_ENUM(NSUInteger, CommentType){
 
 //----------------2.13 获取动态_群组消息 get-------------------
 #define kGroupMsgUrl kBaseUrl(@"/message/group_message/?groupID=%d")  ////注意这里没带token
+
+//----------------2.13 获取动态_群组消息 get-------------------
+#define kUnreadMsgUrl kBaseUrl(@"/message/unread/?token=%@") 
+
+//----------------4.02 群组_获取公司所有群组 get-------------------
+#define kGroupUrl kBaseUrl(@"/group/groups/?IsShowClosed=1&RelationSearchType=%d&token=%@")

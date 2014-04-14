@@ -110,6 +110,7 @@
         }
     }
 */
+    //sadfadlfkdd
     //解析表情
     NSString *regex_emoji = @"\\[[a-zA-Z0-9\\u4e00-\\u9fa5]+\]";//表情的正则表达式
     NSArray *array_emoji = [text componentsMatchedByRegex:regex_emoji];
@@ -132,5 +133,4 @@
     //返回转义后的字符串
     return [text stringByReplacingOccurrencesOfString:@"查看详情</a>" withString:@""];
 }
-
 @end

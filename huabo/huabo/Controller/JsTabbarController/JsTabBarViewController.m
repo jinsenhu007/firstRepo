@@ -10,6 +10,10 @@
 #import "JsDevice.h"
 #import "TSMessageView.h"
 #import "Reachability.h"
+#import "Const.h"
+#import "jsHttpHandler.h"
+#import "UserModel.h"
+#import "UserMgr.h"
 
 @interface JsTabBarViewController ()
 
@@ -23,8 +27,14 @@
     if (self) {
         // Custom initialization
         self.tabBar.backgroundImage = [UIImage imageNamed:@"tabbar.png"];
+        
     }
     return self;
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self _loadUnreadMsg];
 }
 
 - (void)viewDidLoad
@@ -61,9 +71,75 @@
 //    };
     
     [reach startNotifier];
-	// Do any additional setup after loading the view.
+    
+    [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(timerAction:) userInfo:nil repeats:YES];
+	
 }
 
+#pragma mark -
+- (void)timerAction:(NSTimer *)timer{
+    if (![JsDevice netOK]) {
+        return;
+    }
+    
+    [self _loadUnreadMsg];
+}
+
+- (void)_loadUnreadMsg{
+    UserModel *model = [[UserMgr sharedInstance] readFromDisk];
+    NSString *str = [NSString stringWithFormat:kUnreadMsgUrl,model.Token];
+    [jsHttpHandler jsHttpDownloadWithStrOfUrl:str withCache:NO completionBlock:^(id JSON) {
+        if (!JSON) {
+            return ;
+        }
+        
+        if (![JSON objectForKey:@"TotalUnReadMessageCount"]) {
+            
+            [self setValue:[NSNumber numberWithInteger:0] forKey:@"_atAndReplyCnt"];
+            [self setValue:[NSNumber numberWithInteger:0] forKey:@"_sysMsgCnt"];
+            [self _setBadgeValue:0];
+            return;
+        }
+        
+        int atReplyCnt = 0;
+        int sysMsgCnt = 0;
+        /*
+          4（提到我的）
+         8（回复我的）
+         128（系统消息）
+         256（私信）,
+         */
+        for (NSDictionary *dict in [JSON objectForKey:@"MessageUnReadJsonModelList"]) {
+            int pushType = [[dict objectForKey:@"MessagePushType"] intValue];
+            if (pushType == 4 || pushType == 8) {
+                atReplyCnt += [[dict objectForKey:@"MessageUnReadCount"] intValue];
+                
+            }else if(pushType == 128){
+                sysMsgCnt += [[dict objectForKey:@"MessageUnReadCount"] intValue];
+            }
+        }
+        
+        [self setValue:[NSNumber numberWithInteger:atReplyCnt] forKey:@"_atAndReplyCnt"];
+        [self setValue:[NSNumber numberWithInteger:sysMsgCnt] forKey:@"_sysMsgCnt"];
+        
+        [self _setBadgeValue:atReplyCnt+sysMsgCnt];
+    }];
+}
+
+- (void)_setBadgeValue:(NSInteger)num{
+    NSString *str = nil;
+    if (!num) {
+        str = nil;
+    }else{
+        str = [NSString stringWithFormat:@"%d",num];
+    }
+    
+    UITabBarItem *item = [self.tabBar.items objectAtIndex:1]; //信息
+    item.badgeValue = str;
+}
+
+
+#pragma mark -
 -(void)setViewControllers:(NSArray *)viewControllers{
     NSMutableArray *arr = [NSMutableArray array];
     int tag = 1;
@@ -88,6 +164,8 @@
         [item setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:colorSelect,UITextAttributeTextColor, nil] forState:UIControlStateSelected];
         [item setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:SysFont(13),UITextAttributeFont, nil] forState:UIControlStateNormal];
         c.tabBarItem = item;
+        c.tabBarItem.badgeValue = nil;
+      //  item.badgeValue = @"1";
     }
     [super setViewControllers:arr];
 }

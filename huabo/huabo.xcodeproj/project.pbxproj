@@ -266,6 +266,12 @@
 		84497F2918D9903600134789 /* MMProgressHUDWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 84497F1E18D9903600134789 /* MMProgressHUDWindow.m */; };
 		84497F2A18D9903600134789 /* MMRadialProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84497F2018D9903600134789 /* MMRadialProgressView.m */; };
 		84497F2B18D9903600134789 /* MMVectorImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 84497F2218D9903600134789 /* MMVectorImage.m */; };
+		844C359518FB84A30084FC92 /* bage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 844C359318FB84A30084FC92 /* bage@2x.png */; };
+		844C359618FB84A30084FC92 /* bage.png in Resources */ = {isa = PBXBuildFile; fileRef = 844C359418FB84A30084FC92 /* bage.png */; };
+		844C359B18FBDD7A0084FC92 /* DetailGrpVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 844C359918FBDD7A0084FC92 /* DetailGrpVC.m */; };
+		844C359C18FBDD7A0084FC92 /* DetailGrpVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 844C359A18FBDD7A0084FC92 /* DetailGrpVC.xib */; };
+		844C359F18FBDE690084FC92 /* DetailGrpCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 844C359E18FBDE690084FC92 /* DetailGrpCell.m */; };
+		844C35A118FBDE7B0084FC92 /* DetailGrpCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 844C35A018FBDE7B0084FC92 /* DetailGrpCell.xib */; };
 		8468353818C062F8007B5F4B /* @键.png in Resources */ = {isa = PBXBuildFile; fileRef = 8468352318C062F8007B5F4B /* @键.png */; };
 		8468353918C062F8007B5F4B /* @键@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8468352418C062F8007B5F4B /* @键@2x.png */; };
 		8468353E18C062F8007B5F4B /* icon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8468352918C062F8007B5F4B /* icon-60@2x.png */; };
@@ -721,6 +727,14 @@
 		84497F2018D9903600134789 /* MMRadialProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMRadialProgressView.m; sourceTree = "<group>"; };
 		84497F2118D9903600134789 /* MMVectorImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMVectorImage.h; sourceTree = "<group>"; };
 		84497F2218D9903600134789 /* MMVectorImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMVectorImage.m; sourceTree = "<group>"; };
+		844C359318FB84A30084FC92 /* bage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bage@2x.png"; sourceTree = "<group>"; };
+		844C359418FB84A30084FC92 /* bage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bage.png; sourceTree = "<group>"; };
+		844C359818FBDD7A0084FC92 /* DetailGrpVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailGrpVC.h; path = Controller/detailGroup/DetailGrpVC.h; sourceTree = "<group>"; };
+		844C359918FBDD7A0084FC92 /* DetailGrpVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailGrpVC.m; path = Controller/detailGroup/DetailGrpVC.m; sourceTree = "<group>"; };
+		844C359A18FBDD7A0084FC92 /* DetailGrpVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DetailGrpVC.xib; path = Controller/detailGroup/DetailGrpVC.xib; sourceTree = "<group>"; };
+		844C359D18FBDE690084FC92 /* DetailGrpCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailGrpCell.h; path = Controller/detailGroup/DetailGrpCell.h; sourceTree = "<group>"; };
+		844C359E18FBDE690084FC92 /* DetailGrpCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailGrpCell.m; path = Controller/detailGroup/DetailGrpCell.m; sourceTree = "<group>"; };
+		844C35A018FBDE7B0084FC92 /* DetailGrpCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailGrpCell.xib; sourceTree = "<group>"; };
 		8468352318C062F8007B5F4B /* @键.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "@键.png"; sourceTree = "<group>"; };
 		8468352418C062F8007B5F4B /* @键@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "@键@2x.png"; sourceTree = "<group>"; };
 		8468352918C062F8007B5F4B /* icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-60@2x.png"; sourceTree = "<group>"; };
@@ -1310,6 +1324,7 @@
 		84178A4F18BC31B30028672C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				844C359718FBDD4B0084FC92 /* detailGroup */,
 				84A0336B18F6991B00FDF480 /* singleTrend */,
 				84D482D018EE52EB0062A2D0 /* sysMsg */,
 				84D482CA18EE52AF0062A2D0 /* allGroup */,
@@ -1548,9 +1563,24 @@
 			path = Source;
 			sourceTree = "<group>";
 		};
+		844C359718FBDD4B0084FC92 /* detailGroup */ = {
+			isa = PBXGroup;
+			children = (
+				844C359818FBDD7A0084FC92 /* DetailGrpVC.h */,
+				844C359918FBDD7A0084FC92 /* DetailGrpVC.m */,
+				844C359A18FBDD7A0084FC92 /* DetailGrpVC.xib */,
+				844C359D18FBDE690084FC92 /* DetailGrpCell.h */,
+				844C359E18FBDE690084FC92 /* DetailGrpCell.m */,
+				844C35A018FBDE7B0084FC92 /* DetailGrpCell.xib */,
+			);
+			name = detailGroup;
+			sourceTree = "<group>";
+		};
 		8468352218C062F8007B5F4B /* images */ = {
 			isa = PBXGroup;
 			children = (
+				844C359318FB84A30084FC92 /* bage@2x.png */,
+				844C359418FB84A30084FC92 /* bage.png */,
 				84E606A718EBF44200DCF0C3 /* 向下箭头@2x.png */,
 				84E606A818EBF44200DCF0C3 /* 向下箭头.png */,
 				8494605718E564F000373DF0 /* checkBox.png */,
@@ -1862,6 +1892,7 @@
 				84497EAC18D305EA00134789 /* navBG@2x.png in Resources */,
 				8401240D18C59C40009168FA /* detail_image_background@2x.png in Resources */,
 				840AFFC418C80A5E00AACEA2 /* NotificationBackgroundWarningIcon@2x.png in Resources */,
+				844C359518FB84A30084FC92 /* bage@2x.png in Resources */,
 				84E606C418ED3CC900DCF0C3 /* MsgCell.xib in Resources */,
 				84E606BC18ECF84B00DCF0C3 /* 37fail-Checkmark@2x.png in Resources */,
 				84497E8B18D2F78C00134789 /* 登录主页面_11.png in Resources */,
@@ -1937,7 +1968,9 @@
 				84497E9C18D2FF8200134789 /* 联系人@2x.png in Resources */,
 				84178A2A18BC2C6D0028672C /* InfoPlist.strings in Resources */,
 				840AFF5718C807A100AACEA2 /* commSetVC.xib in Resources */,
+				844C359C18FBDD7A0084FC92 /* DetailGrpVC.xib in Resources */,
 				840AFFC618C80A5E00AACEA2 /* NotificationButtonBackground@2x.png in Resources */,
+				844C359618FB84A30084FC92 /* bage.png in Resources */,
 				84497F0518D83FBF00134789 /* sideMenuBG.png in Resources */,
 				84497EB718D6853300134789 /* 赞.png in Resources */,
 				84497F0E18D9745E00134789 /* ContactorVC.xib in Resources */,
@@ -2016,6 +2049,7 @@
 				8479725618DAB6EA00B15141 /* 粉丝.png in Resources */,
 				84497ED318D6CA1300134789 /* 返回@2x.png in Resources */,
 				8475CF2018F3D9700092C24D /* MyReplyCell.xib in Resources */,
+				844C35A118FBDE7B0084FC92 /* DetailGrpCell.xib in Resources */,
 				842299FC18C47EEC00AB487C /* compose_emoticonbutton_background_highlighted.png in Resources */,
 				84B797E518E2BC7E003E12BF /* JsBotBtn.xib in Resources */,
 				840AFFC518C80A5E00AACEA2 /* NotificationButtonBackground.png in Resources */,
@@ -2061,6 +2095,7 @@
 				840AFF2518C8066800AACEA2 /* ASIDataCompressor.m in Sources */,
 				840AFF2F18C8066800AACEA2 /* BUIView.m in Sources */,
 				84497EC318D6875E00134789 /* SecFooter.m in Sources */,
+				844C359F18FBDE690084FC92 /* DetailGrpCell.m in Sources */,
 				840AFF2618C8066800AACEA2 /* ASIDataDecompressor.m in Sources */,
 				840AFF7E18C8080400AACEA2 /* BaseViewController.m in Sources */,
 				840AFF7018C807C500AACEA2 /* factory.m in Sources */,
@@ -2166,6 +2201,7 @@
 				84B797E918E41226003E12BF /* AtUsersVC.m in Sources */,
 				840AFF7618C807C500AACEA2 /* UIViewExt.m in Sources */,
 				840AFF4A18C8066800AACEA2 /* WEPopoverController.m in Sources */,
+				844C359B18FBDD7A0084FC92 /* DetailGrpVC.m in Sources */,
 				84497F0D18D9745E00134789 /* ContactorVC.m in Sources */,
 				84497E8118D18A4C00134789 /* PNBarChart.m in Sources */,
 				84497DC418CEBCDA00134789 /* MKAnnotationView+WebCache.m in Sources */,

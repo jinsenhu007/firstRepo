@@ -13,6 +13,12 @@
     clickableUIView *_reply;
     clickableUIView *_group;
     clickableUIView *_sysMsg;
+    
+    UIImageView *_atAndReplyView;
+    UIImageView *_sysMsgView;
+    
+    UILabel *_atAndReplyLabel;
+    UILabel *_sysMsgLabel;
 }
 @property (strong, nonatomic) IBOutlet UIView *tHeaderBGView;
 

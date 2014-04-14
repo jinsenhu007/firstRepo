@@ -14,5 +14,8 @@
 
 
 @interface JsTabBarViewController : UITabBarController
-
+{
+    NSInteger _atAndReplyCnt;   //回复，提到我的总数量
+    NSInteger _sysMsgCnt;   //系统消息数量
+}
 @end
