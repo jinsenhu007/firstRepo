@@ -23,6 +23,7 @@
 #import "JsDevice.h"
 #import "TrendsVC.h"
 #import "MyGroupVC.h"
+#import "DetailGrpVC.h"
 
 #define TOP_GAP 8
 #define LEFT_GAP 8
@@ -154,11 +155,18 @@
     
     if (indexPath.row == 2) {
         //群组
-        UIViewController *vc = [self _getMianController];
-        MyGroupVC *mvc = [[MyGroupVC alloc]init];
+//        UIViewController *vc = [self _getMianController];
+//        MyGroupVC *mvc = [[MyGroupVC alloc]init];
+//        DDMenuController *dd = [self _getDDMenuController];
+//        [dd showRootController:YES];
+//        [vc.navigationController pushViewController:mvc animated:YES];
+        
+         UIViewController *vc = [self _getMianController];
+        DetailGrpVC *dvc = [[DetailGrpVC alloc]init];
         DDMenuController *dd = [self _getDDMenuController];
         [dd showRootController:YES];
-        [vc.navigationController pushViewController:mvc animated:YES];
+        [vc.navigationController pushViewController:dvc animated:YES];
+        
     }
     if (indexPath.row == 3) {
         //通讯录

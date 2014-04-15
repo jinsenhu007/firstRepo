@@ -345,6 +345,10 @@
 		84E606BF18ED33E500DCF0C3 /* MsgVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84E606BE18ED33E500DCF0C3 /* MsgVC.xib */; };
 		84E606C218ED3CB900DCF0C3 /* MsgCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E606C118ED3CB900DCF0C3 /* MsgCell.m */; };
 		84E606C418ED3CC900DCF0C3 /* MsgCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84E606C318ED3CC800DCF0C3 /* MsgCell.xib */; };
+		84ED725A18FD10E70050D924 /* 锁@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84ED725818FD10E70050D924 /* 锁@2x.png */; };
+		84ED725B18FD10E70050D924 /* 锁.png in Resources */ = {isa = PBXBuildFile; fileRef = 84ED725918FD10E70050D924 /* 锁.png */; };
+		84ED726018FD2CE50050D924 /* CreateGrpVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 84ED725E18FD2CE50050D924 /* CreateGrpVC.m */; };
+		84ED726118FD2CE50050D924 /* CreateGrpVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84ED725F18FD2CE50050D924 /* CreateGrpVC.xib */; };
 		84F9AA8518C6B6CB00017842 /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F9AA8418C6B6CB00017842 /* UserModel.m */; };
 /* End PBXBuildFile section */
 
@@ -832,6 +836,11 @@
 		84E606C018ED3CB900DCF0C3 /* MsgCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MsgCell.h; sourceTree = "<group>"; };
 		84E606C118ED3CB900DCF0C3 /* MsgCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MsgCell.m; sourceTree = "<group>"; };
 		84E606C318ED3CC800DCF0C3 /* MsgCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MsgCell.xib; sourceTree = "<group>"; };
+		84ED725818FD10E70050D924 /* 锁@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "锁@2x.png"; sourceTree = "<group>"; };
+		84ED725918FD10E70050D924 /* 锁.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "锁.png"; sourceTree = "<group>"; };
+		84ED725D18FD2CE50050D924 /* CreateGrpVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CreateGrpVC.h; path = Controller/createGroup/CreateGrpVC.h; sourceTree = "<group>"; };
+		84ED725E18FD2CE50050D924 /* CreateGrpVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CreateGrpVC.m; path = Controller/createGroup/CreateGrpVC.m; sourceTree = "<group>"; };
+		84ED725F18FD2CE50050D924 /* CreateGrpVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CreateGrpVC.xib; path = Controller/createGroup/CreateGrpVC.xib; sourceTree = "<group>"; };
 		84F9AA8318C6B6CB00017842 /* UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserModel.h; path = model/user/UserModel.h; sourceTree = "<group>"; };
 		84F9AA8418C6B6CB00017842 /* UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserModel.m; path = model/user/UserModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1324,6 +1333,7 @@
 		84178A4F18BC31B30028672C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				84ED725C18FD2CA90050D924 /* createGroup */,
 				844C359718FBDD4B0084FC92 /* detailGroup */,
 				84A0336B18F6991B00FDF480 /* singleTrend */,
 				84D482D018EE52EB0062A2D0 /* sysMsg */,
@@ -1579,6 +1589,8 @@
 		8468352218C062F8007B5F4B /* images */ = {
 			isa = PBXGroup;
 			children = (
+				84ED725818FD10E70050D924 /* 锁@2x.png */,
+				84ED725918FD10E70050D924 /* 锁.png */,
 				844C359318FB84A30084FC92 /* bage@2x.png */,
 				844C359418FB84A30084FC92 /* bage.png */,
 				84E606A718EBF44200DCF0C3 /* 向下箭头@2x.png */,
@@ -1777,6 +1789,16 @@
 			path = MBProessHUD;
 			sourceTree = "<group>";
 		};
+		84ED725C18FD2CA90050D924 /* createGroup */ = {
+			isa = PBXGroup;
+			children = (
+				84ED725D18FD2CE50050D924 /* CreateGrpVC.h */,
+				84ED725E18FD2CE50050D924 /* CreateGrpVC.m */,
+				84ED725F18FD2CE50050D924 /* CreateGrpVC.xib */,
+			);
+			name = createGroup;
+			sourceTree = "<group>";
+		};
 		84F9AA8218C6B69E00017842 /* user */ = {
 			isa = PBXGroup;
 			children = (
@@ -1835,6 +1857,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "华博创意";
 				TargetAttributes = {
+					84178A1B18BC2C6D0028672C = {
+						DevelopmentTeam = T5AU252G4N;
+					};
 					84178A3618BC2C6D0028672C = {
 						TestTargetID = 84178A1B18BC2C6D0028672C;
 					};
@@ -1908,6 +1933,7 @@
 				84229A0618C47EEC00AB487C /* compose_mentionbutton_background.png in Resources */,
 				84D482D518EE530C0062A2D0 /* SysMsgVC.xib in Resources */,
 				84497EB218D3069300134789 /* Default-568h@2x.png in Resources */,
+				84ED725B18FD10E70050D924 /* 锁.png in Resources */,
 				84497F1018D97F3200134789 /* ContactorCell.xib in Resources */,
 				84497E9D18D2FF8200134789 /* 设置.png in Resources */,
 				84497EBB18D6853900134789 /* 转发.png in Resources */,
@@ -1966,6 +1992,7 @@
 				8494605B18E564F000373DF0 /* checkBox.png in Resources */,
 				840AFF4818C8066800AACEA2 /* popoverBg@2x.png in Resources */,
 				84497E9C18D2FF8200134789 /* 联系人@2x.png in Resources */,
+				84ED726118FD2CE50050D924 /* CreateGrpVC.xib in Resources */,
 				84178A2A18BC2C6D0028672C /* InfoPlist.strings in Resources */,
 				840AFF5718C807A100AACEA2 /* commSetVC.xib in Resources */,
 				844C359C18FBDD7A0084FC92 /* DetailGrpVC.xib in Resources */,
@@ -2040,6 +2067,7 @@
 				84497EB118D3069300134789 /* Default.png in Resources */,
 				84497EFF18D6FD3200134789 /* addPhoto@2x.png in Resources */,
 				840AFF4018C8066800AACEA2 /* popoverArrowDown@2x.png in Resources */,
+				84ED725A18FD10E70050D924 /* 锁@2x.png in Resources */,
 				84497E0E18D00DB500134789 /* timeline_retweet_background@2x.png in Resources */,
 				840AFF3418C8066800AACEA2 /* MLTableAlertBackground@2x.png in Resources */,
 				84A0335918F4D90C00FDF480 /* AtMeVC.xib in Resources */,
@@ -2199,6 +2227,7 @@
 				840AFFC918C80A5E00AACEA2 /* TSMessageView.m in Sources */,
 				840AFF7118C807C500AACEA2 /* JsBtn.m in Sources */,
 				84B797E918E41226003E12BF /* AtUsersVC.m in Sources */,
+				84ED726018FD2CE50050D924 /* CreateGrpVC.m in Sources */,
 				840AFF7618C807C500AACEA2 /* UIViewExt.m in Sources */,
 				840AFF4A18C8066800AACEA2 /* WEPopoverController.m in Sources */,
 				844C359B18FBDD7A0084FC92 /* DetailGrpVC.m in Sources */,
@@ -2327,12 +2356,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "huabo/huabo-Prefix.pch";
 				INFOPLIST_FILE = "huabo/huabo-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_LDFLAGS = "-licucore";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -2342,12 +2374,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "huabo/huabo-Prefix.pch";
 				INFOPLIST_FILE = "huabo/huabo-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_LDFLAGS = "-licucore";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

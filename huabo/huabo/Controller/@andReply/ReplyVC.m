@@ -201,7 +201,7 @@
 #pragma mark - TableView Delegate Data Source
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-
+    
     return _arrData.count;
 }
 
@@ -313,7 +313,12 @@
     _popupBGView = nil;
 }
 - (void) popupListcompoentDidCancel:(PopupListComponent *)sender{
-    _popupList = nil;
+    if (_popupList) {
+        [UIView animateWithDuration:0.3f animations:^{
+            self.arrow.transform = CGAffineTransformIdentity;
+        }];
+        _popupList = nil;
+    }
     if (_popupBGView) {
         [_popupBGView removeFromSuperview];
         _popupBGView = nil;

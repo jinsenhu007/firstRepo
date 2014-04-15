@@ -50,7 +50,7 @@
 /*
  divideType     消息分类（0全部 1默认 2图片 4文件）
  */
-#define kAllMessageUrl @"http://192.168.0.221:8080/message/all/?pageSize=10&token=%@&divideType=%d"
+#define kAllMessageUrl @"http://192.168.0.221:8080/message/all/?pageSize=10&token=%@&divideType=%ld"
 
 //--------------------3.11 动态更新_点赞 post--------------
 #define kMsgLikeUrl kBaseUrl(@"/message/like/")
@@ -134,3 +134,12 @@ typedef  NS_ENUM(NSUInteger, CommentType){
 
 //----------------4.02 群组_获取公司所有群组 get-------------------
 #define kGroupUrl kBaseUrl(@"/group/groups/?IsShowClosed=1&RelationSearchType=%d&token=%@")
+
+//----------------4.03 群组_加入公有群组 get-------------------
+#define kJoinPublicGrp kBaseUrl(@"/group/join_public/?groupID=%@&token=%@")
+//----------------4.04 群组_加入私有群组 get-------------------
+#define kJoinPrivateGrp kBaseUrl(@"/group/join_private/?groupID=%@&token=%@")
+//----------------4.05 群组_退出群组 get-------------------
+#define kQuitGrp kBaseUrl(@"/group/exit/?groupID=%@&token=%@")
+//----------------4.06 群组_解散群组 get-------------------
+#define kDisperseGrp kBaseUrl(@"/group/disperse/?groupID=%@&token=%@")

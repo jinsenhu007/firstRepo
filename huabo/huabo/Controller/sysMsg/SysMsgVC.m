@@ -40,6 +40,14 @@
     
 }
 
+- (void)setExtraCellLineHidden: (UITableView *)tableView
+{
+    UIView *view =[ [UIView alloc]init];
+    view.backgroundColor = [UIColor clearColor];
+    [tableView setTableFooterView:view];
+}
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -70,6 +78,7 @@
         [self.tableView triggerPullToRefresh];
     }
  
+    [self setExtraCellLineHidden:self.tableView];
 }
 - (void)_loadDataSource{
     NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
@@ -145,6 +154,11 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    if (_arrData.count) {
+        tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+    }else{
+        tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    }
     return _arrData.count;
 }
 

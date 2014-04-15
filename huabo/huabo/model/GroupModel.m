@@ -11,3 +11,10 @@
 @implementation GroupModel
 
 @end
+
+
+@implementation DetailGrpModel
+
+
+
+@end

@@ -131,7 +131,7 @@
                           _tAlert.height = 80;
                           //选择了某一个cell
                           [_tAlert configureSelectionBlock:^(NSIndexPath *selectedIndex) {
-                              NSLog(@"selectedIndex %d",selectedIndex.row);
+                              NSLog(@"selectedIndex %ld",(long)selectedIndex.row);
                               //根据选择的网络获取用户token等信息
                                NSDictionary *dic = [arr objectAtIndex:selectedIndex.row];
                               _uModel.Token = [dic objectForKey:@"Token"];

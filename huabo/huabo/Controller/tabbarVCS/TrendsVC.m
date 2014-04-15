@@ -141,7 +141,7 @@
        
         _SinceID = 0;   //depredicated ,bad manner to load data
         NSString *s = [NSString stringWithFormat:kAllMessageUrl,model.Token,_devideType];
-        _strOfUrl = [NSString stringWithFormat:@"%@&sinceID=%d",s,_SinceID];
+        _strOfUrl = [NSString stringWithFormat:@"%@&sinceID=%ld",s,(long)_SinceID];
         [weakSelf _downloadWithStrOfUrl:_strOfUrl];
         
         NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
@@ -165,7 +165,7 @@
         
         _loadDataSource = NO;
         NSString *str = [NSString stringWithFormat:kAllMessageUrl,model.Token,_devideType];
-        _strOfUrl = [NSString stringWithFormat:@"%@&maxid=%d",str,_maxID];
+        _strOfUrl = [NSString stringWithFormat:@"%@&maxid=%ld",str,_maxID];
         NSLog(@"load more %@",_strOfUrl);
         _needCache = YES;
         [weakSelf _downloadWithStrOfUrl:_strOfUrl];
@@ -202,7 +202,7 @@
         
         NSArray *arrRows = [JSON objectForKey:@"Rows"];
         
-        NSLog(@"arrRows count %d MaxID %d",arrRows.count,_maxID);
+        NSLog(@"arrRows count %lu MaxID %ld",(unsigned long)arrRows.count,(long)_maxID);
         
          _maxID = [[JSON objectForKey:@"MaxID"] intValue];
         //只有在下拉刷新的时候才需要改变SinceID
@@ -602,7 +602,7 @@
     id anyObjectToPassToCallback = sender.userInfo;
     NSLog(@"popup userInfo = %@", anyObjectToPassToCallback);
     UIButton *btnSelect = (UIButton *)[self.view viewWithTag:itemId];
-    NSLog(@"btnSelect %d  text %@",btnSelect.tag,btnSelect.titleLabel.text);
+    NSLog(@"btnSelect %ld  text %@",btnSelect.tag,btnSelect.titleLabel.text);
     
     WeiboModel *model = [_arrData objectAtIndex:_pathForPopList.section];
     UserModel *user = [[UserMgr sharedInstance] readFromDisk];

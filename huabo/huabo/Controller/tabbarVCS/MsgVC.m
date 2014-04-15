@@ -33,6 +33,14 @@
     return self;
 }
 
+- (void)setExtraCellLineHidden: (UITableView *)tableView
+{
+    UIView *view =[ [UIView alloc]init];
+    view.backgroundColor = [UIColor clearColor];
+    [tableView setTableFooterView:view];
+}
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -108,7 +116,7 @@
             _atAndReplyView.image = image;
             //_atAndReplyLabel.text = [NSString stringWithFormat:@"99"];
             CGSize s = [_atAndReplyLabel.text sizeWithFont:[UIFont systemFontOfSize:12] constrainedToSize:CGSizeMake(180, 15) lineBreakMode:NSLineBreakByTruncatingTail];
-           _atAndReplyView.frame = CGRectMake(_atAndReplyView.left, _atAndReplyView.top, s.width+6, s.height);
+           _atAndReplyView.frame = CGRectMake(_atAndReplyView.left, _atAndReplyView.top, s.width+10, s.height);
         }
     }else{
         _atAndReplyView.hidden = YES;
@@ -123,13 +131,15 @@
             _atAndReplyView.image = image;
             //_atAndReplyLabel.text = [NSString stringWithFormat:@"99"];
             CGSize s = [_sysMsgLabel.text sizeWithFont:[UIFont systemFontOfSize:12] constrainedToSize:CGSizeMake(180, 15) lineBreakMode:NSLineBreakByTruncatingTail];
-            _sysMsgView.width = s.width + 6;
+            _sysMsgView.width = s.width + 10;
         }
 
     }else{
         _sysMsgLabel.hidden = YES;
         _sysMsgView.hidden = YES;
     }
+    
+    [self setExtraCellLineHidden:self.tableView];
 }
 
 #pragma mark - KVO Delegate Method
@@ -147,7 +157,7 @@
             _atAndReplyLabel.text = [NSString stringWithFormat:@"%d",cnt];
             if (cnt >= 10) {
                 CGSize s = [_atAndReplyLabel.text sizeWithFont:[UIFont systemFontOfSize:12] constrainedToSize:CGSizeMake(180, 15) lineBreakMode:NSLineBreakByTruncatingTail];
-                _atAndReplyView.width = s.width+6;
+                _atAndReplyView.width = s.width+10;
             }else{
                 _atAndReplyView.width = 15;
             }
@@ -164,7 +174,7 @@
             _sysMsgLabel.text = [NSString stringWithFormat:@"%d",cnt];
             if (cnt >= 10) {
                 CGSize s = [_sysMsgLabel.text sizeWithFont:[UIFont systemFontOfSize:12] constrainedToSize:CGSizeMake(180, 15) lineBreakMode:NSLineBreakByTruncatingTail];
-                _sysMsgView.width = s.width+6;
+                _sysMsgView.width = s.width+10;
             }else{
                 _sysMsgView.width = 15;
             }
@@ -179,6 +189,11 @@
 
 #pragma mark -
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    if (_arrData.count) {
+        tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+    }else{
+        tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    }
     return _arrData.count;
 }
 

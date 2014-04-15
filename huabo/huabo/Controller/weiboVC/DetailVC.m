@@ -122,6 +122,12 @@
     [super viewWillAppear:animated];
     [self _loadData];
 }
+- (void)setExtraCellLineHidden: (UITableView *)tableView
+{
+    UIView *view =[ [UIView alloc]init];
+    view.backgroundColor = [UIColor clearColor];
+    [tableView setTableFooterView:view];
+}
 
 - (void)viewDidLoad
 {
@@ -147,6 +153,7 @@
         int count = [self.model.MessageCommentTotalCount integerValue];
         [pl setText:[NSString stringWithFormat:@"%d评论",count]];
     }];
+    [self setExtraCellLineHidden:self.tableView];
 }
 
 - (void)_createBottmView{
@@ -303,9 +310,12 @@
 
 #pragma mark UITableView delegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-//    if (_arrData.count== 0) {
-//        return 5;
-//    }
+    if (_arrData.count) {
+        tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+    }else{
+        tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    }
+    
     return _arrData.count;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
