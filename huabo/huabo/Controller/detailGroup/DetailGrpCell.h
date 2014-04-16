@@ -15,6 +15,8 @@
     UILabel *_nameLabel;
     UILabel *_creator;
     UIImageView *_lockView;
+    
+    UIImageView *_testHeadView;
 }
 
 @property (retain,nonatomic) DetailGrpModel *model;

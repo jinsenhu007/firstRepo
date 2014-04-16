@@ -8,7 +8,7 @@
 
 #import "BaseViewController.h"
 
-typedef void (^selectFinish)(NSArray *);
+typedef void (^selectFinish)(NSArray *array);
 
 @interface AtUsersVC : BaseViewController<UITableViewDataSource,UITableViewDelegate,UISearchDisplayDelegate,UISearchBarDelegate>
 {

@@ -15,8 +15,9 @@
 #import "AppDelegate.h"
 #import "DDMenuController.h"
 #import "PersonalVC.h"
-
-
+#import "PhotoBrowserVC.h"
+#import "MJPhotoBrowser.h"
+#import "MJPhoto.h"
 
 #define LIST_FONT 14.0f             //列表中文本字体
 #define LIST_REPOST_FONT 13.0f      //列表中转发的文本字体
@@ -117,6 +118,10 @@
             AttachmentInfo *info = [model.arrAttachments objectAtIndex:i];
             [iView setImageWithURL:[NSURL URLWithString:info.ImageSmallPath] placeholderImage:[UIImage JSenImageNamed:@"weibolist_pic.png"]];
             [self addSubview:iView];
+            [iView handleComplemetionBlock:^(ClickableUIImageView *view) {
+                //点击照片
+                [self _browsePhotos:model.arrAttachments currentImageViewIndex:i andView:iView];
+            }];
         }
         }
     }else{
@@ -328,5 +333,30 @@
     //  UINavigationController *nav = [tab.viewControllers objectAtIndex:0];
     UINavigationController *nav = [tab.viewControllers objectAtIndex:tab.selectedIndex];
     return [nav topViewController];
+}
+
+#pragma mark - 浏览相册
+- (void)_browsePhotos:(NSArray *)photoArray currentImageViewIndex:(int )n andView:(ClickableUIImageView *)view{
+    
+    NSMutableArray *pArray = [NSMutableArray new];
+    for (int i= 0; i < photoArray.count; i++) {
+        MJPhoto *mP = [[MJPhoto alloc]init];
+        AttachmentInfo *att = [photoArray objectAtIndex:i];
+        mP.url = [NSURL URLWithString:att.ImageBigPath];
+        mP.srcImageView = view;
+        [pArray addObject:mP];
+    }
+    
+    // 2.显示相册
+    MJPhotoBrowser *browser = [[MJPhotoBrowser alloc] init];
+    browser.currentPhotoIndex = n; // 弹出相册时显示的第一张图片是？
+    browser.photos = pArray; // 设置所有的图片
+    [browser show];
+    return;
+    PhotoBrowserVC *pvc = [[PhotoBrowserVC alloc]init];
+    pvc.arrSource = photoArray;
+    pvc.currIndex = n;
+    UIViewController *vc = [self _getMianController];
+    [vc presentViewController:pvc animated:NO completion:nil];
 }
 @end

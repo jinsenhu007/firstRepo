@@ -30,6 +30,7 @@
 
 - (void)layoutSubviews{
     [super layoutSubviews ];
+    
     [_grpHead setImageWithURL:[NSURL URLWithString:_model.GroupHeadSculpture24] placeholderImage:nil];
     _nameLabel.text = _model.GroupName;
     _creator.text = _model.CreaterName;

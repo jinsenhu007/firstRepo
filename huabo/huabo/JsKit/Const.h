@@ -143,3 +143,5 @@ typedef  NS_ENUM(NSUInteger, CommentType){
 #define kQuitGrp kBaseUrl(@"/group/exit/?groupID=%@&token=%@")
 //----------------4.06 群组_解散群组 get-------------------
 #define kDisperseGrp kBaseUrl(@"/group/disperse/?groupID=%@&token=%@")
+//----------------4.07 群组_创建群组 post-------------------
+#define kCreateGrp kBaseUrl(@"/group/create/")

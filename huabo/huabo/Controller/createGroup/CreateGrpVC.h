@@ -8,11 +8,16 @@
 
 #import "BaseViewController.h"
 #import "clickableUIView.h"
-
+@class MBProgressHUD;
 @interface CreateGrpVC : BaseViewController
-
+{
+    int _groupType;
+    MBProgressHUD *hud;
+}
 @property (strong, nonatomic) IBOutlet UITextField *grpName;
 @property (strong, nonatomic) IBOutlet UITextView *briefIntroTView;
 @property (strong, nonatomic) IBOutlet clickableUIView *grpType;
 @property (strong, nonatomic) IBOutlet clickableUIView *inviteFriend;
+
+@property (retain,nonatomic) NSMutableArray *inviteArray;
 @end

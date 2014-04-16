@@ -108,6 +108,7 @@
             phoPic.allowsEditing = YES;
             UIViewController *vc = [self _getWeiboVC];
             [vc presentViewController:phoPic animated:YES completion:nil];
+          
             
         }else if (buttonIndex == 1){
             //手机相册
