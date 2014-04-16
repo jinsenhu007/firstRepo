@@ -48,11 +48,7 @@
     
         SDWebImageManager *mange = [SDWebImageManager sharedManager];
     
-    [mange downloadWithURL:[NSURL URLWithString:att.ImageBigPath] options:SDWebImageLowPriority|SDWebImageProgressiveDownload  progress:^(NSUInteger receivedSize, long long expectedSize) {
-        
-    } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished) {
-        
-    }];
+ 
     
     [mange downloadWithURL:[NSURL URLWithString:att.ImageBigPath] options:SDWebImageLowPriority|SDWebImageProgressiveDownload
                   progress:^(NSUInteger receivedSize, long long expectedSize) {
