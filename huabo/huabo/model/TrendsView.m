@@ -15,7 +15,6 @@
 #import "AppDelegate.h"
 #import "DDMenuController.h"
 #import "PersonalVC.h"
-#import "PhotoBrowserVC.h"
 #import "MJPhotoBrowser.h"
 #import "MJPhoto.h"
 
@@ -89,7 +88,7 @@
     CGSize optimalSize = [_textLabel optimumSize:YES];
     _textLabel.height = optimalSize.height;
   
-    NSLog(@"size %f %f  %@",optimalSize.width,optimalSize.height,_textLabel.componentsAndPlainText);
+   // NSLog(@"size %f %f  %@",optimalSize.width,optimalSize.height,_textLabel.componentsAndPlainText);
     
     //图片75*70
     float y = _textLabel.bottom+kDiffItemsGap;
@@ -98,7 +97,7 @@
         //文档附件只能有一个
         if (model.arrAttachments.count == 1 && [[model.arrAttachments objectAtIndex:0] Type] == 1) {
             //如果是文档附件
-             AttachmentInfo *info = [model.arrAttachments objectAtIndex:0];
+            // AttachmentInfo *info = [model.arrAttachments objectAtIndex:0];
             //下面这样做为了解决复用问题（性能欠佳）
             [self _removeClickImageViewWithSuperView:self];
               iViewDocs = [[ClickableUIImageView alloc]initWithFrame:CGRectMake(5, y, kImage_Width, kImage_Height)];
@@ -352,11 +351,5 @@
     browser.currentPhotoIndex = n; // 弹出相册时显示的第一张图片是？
     browser.photos = pArray; // 设置所有的图片
     [browser show];
-    return;
-    PhotoBrowserVC *pvc = [[PhotoBrowserVC alloc]init];
-    pvc.arrSource = photoArray;
-    pvc.currIndex = n;
-    UIViewController *vc = [self _getMianController];
-    [vc presentViewController:pvc animated:NO completion:nil];
 }
 @end

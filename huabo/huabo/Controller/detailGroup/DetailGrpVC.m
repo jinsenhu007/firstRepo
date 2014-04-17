@@ -54,7 +54,12 @@
     [self setExtraCellLineHidden:_tableView];
     
     
-    [self _prepareLoadData];
+   
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+     [self _prepareLoadData];
 }
 
 - (void)_prepareLoadData{

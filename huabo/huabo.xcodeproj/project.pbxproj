@@ -340,8 +340,6 @@
 		84ED726C18FE275F0050D924 /* RadioButton-Selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 84ED726818FE275F0050D924 /* RadioButton-Selected.png */; };
 		84ED726D18FE275F0050D924 /* RadioButton-Unselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 84ED726918FE275F0050D924 /* RadioButton-Unselected.png */; };
 		84ED726E18FE275F0050D924 /* RadioButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 84ED726B18FE275F0050D924 /* RadioButton.m */; };
-		84ED727718FE741E0050D924 /* PhotoBrowserVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 84ED727518FE741E0050D924 /* PhotoBrowserVC.m */; };
-		84ED727818FE741E0050D924 /* PhotoBrowserVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84ED727618FE741E0050D924 /* PhotoBrowserVC.xib */; };
 		84ED72D118FEA3160050D924 /* MBProgressHUD+Add.m in Sources */ = {isa = PBXBuildFile; fileRef = 84ED729D18FEA3160050D924 /* MBProgressHUD+Add.m */; };
 		84ED72D218FEA3160050D924 /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 84ED729E18FEA3160050D924 /* MBProgressHUD.bundle */; };
 		84ED72D418FEA3160050D924 /* MJPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 84ED72A318FEA3160050D924 /* MJPhoto.m */; };
@@ -837,9 +835,6 @@
 		84ED726918FE275F0050D924 /* RadioButton-Unselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RadioButton-Unselected.png"; sourceTree = "<group>"; };
 		84ED726A18FE275F0050D924 /* RadioButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioButton.h; sourceTree = "<group>"; };
 		84ED726B18FE275F0050D924 /* RadioButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioButton.m; sourceTree = "<group>"; };
-		84ED727418FE741E0050D924 /* PhotoBrowserVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PhotoBrowserVC.h; path = Controller/photoBrowser/PhotoBrowserVC.h; sourceTree = "<group>"; };
-		84ED727518FE741E0050D924 /* PhotoBrowserVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PhotoBrowserVC.m; path = Controller/photoBrowser/PhotoBrowserVC.m; sourceTree = "<group>"; };
-		84ED727618FE741E0050D924 /* PhotoBrowserVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PhotoBrowserVC.xib; path = Controller/photoBrowser/PhotoBrowserVC.xib; sourceTree = "<group>"; };
 		84ED729C18FEA3160050D924 /* MBProgressHUD+Add.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+Add.h"; sourceTree = "<group>"; };
 		84ED729D18FEA3160050D924 /* MBProgressHUD+Add.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+Add.m"; sourceTree = "<group>"; };
 		84ED729E18FEA3160050D924 /* MBProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBProgressHUD.bundle; sourceTree = "<group>"; };
@@ -1382,7 +1377,6 @@
 		84178A4F18BC31B30028672C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				84ED727318FE73FC0050D924 /* photoBrowser */,
 				84ED725C18FD2CA90050D924 /* createGroup */,
 				844C359718FBDD4B0084FC92 /* detailGroup */,
 				84A0336B18F6991B00FDF480 /* singleTrend */,
@@ -1827,16 +1821,6 @@
 			path = RadioButton;
 			sourceTree = "<group>";
 		};
-		84ED727318FE73FC0050D924 /* photoBrowser */ = {
-			isa = PBXGroup;
-			children = (
-				84ED727418FE741E0050D924 /* PhotoBrowserVC.h */,
-				84ED727518FE741E0050D924 /* PhotoBrowserVC.m */,
-				84ED727618FE741E0050D924 /* PhotoBrowserVC.xib */,
-			);
-			name = photoBrowser;
-			sourceTree = "<group>";
-		};
 		84ED729918FEA3160050D924 /* photoBrowser */ = {
 			isa = PBXGroup;
 			children = (
@@ -2025,7 +2009,6 @@
 				84497EA018D303F100134789 /* 7_05.jpg in Resources */,
 				8494605E18E564F000373DF0 /* uncheckBox@2x.png in Resources */,
 				8401240C18C59C3F009168FA /* detail_image_background.png in Resources */,
-				84ED727818FE741E0050D924 /* PhotoBrowserVC.xib in Resources */,
 				8479725818DAB6EA00B15141 /* 关注@2x.png in Resources */,
 				84A0335E18F4D94200FDF480 /* AtMeCell.xib in Resources */,
 				840AFF4318C8066800AACEA2 /* popoverArrowRight.png in Resources */,
@@ -2358,7 +2341,6 @@
 				84497F2318D9903600134789 /* MMHud.m in Sources */,
 				84A0336918F679EF00FDF480 /* SysMsgModel.m in Sources */,
 				84178A6D18BC40620028672C /* LoginViewController.m in Sources */,
-				84ED727718FE741E0050D924 /* PhotoBrowserVC.m in Sources */,
 				84ED732518FEA4050050D924 /* UIImageView+MJWebCache.m in Sources */,
 				84ED72D618FEA3160050D924 /* MJPhotoBrowser.m in Sources */,
 				84497E8518D18A4C00134789 /* PNLineChart.m in Sources */,
@@ -2509,6 +2491,7 @@
 				OTHER_LDFLAGS = "-licucore";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -2527,6 +2510,7 @@
 				OTHER_LDFLAGS = "-licucore";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

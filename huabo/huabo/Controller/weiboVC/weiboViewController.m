@@ -244,7 +244,7 @@
         _devideType = 1;
         [MMProgressHUD setPresentationStyle:MMProgressHUDPresentationStyleShrink];
         [MMProgressHUD showWithStatus:@"发送中..."];
-        NSLog(@"_commType %d",_commType);
+        NSLog(@"_commType %ld",_commType);
         if (_commType == CommentSource) {
             [self _commentSourceMsg];
         }else if (_commType == Comment_Comment){
@@ -575,7 +575,7 @@
         NSMutableString *str = [NSMutableString string];
         NSMutableString *strInTextView = [NSMutableString new];
         for (UserModel *model in array) {
-            [str appendFormat:@"%d,",model.ID];
+            [str appendFormat:@"%ld,",model.ID];
             [strInTextView appendFormat:@"|@%@|",model.RealName];
             
         }
@@ -613,7 +613,8 @@
 
 
 - (void)btnKeyBoard:(id)sender{
-    
+    [_tView.inputView reloadInputViews];
+    [_tView becomeFirstResponder];
 }
 
 #pragma mark - 处理传来群组数组
